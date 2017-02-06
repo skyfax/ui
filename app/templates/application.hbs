@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="banner"></div>
+    <div class="row alignright">
+      {{#if session.isAuthenticated}}
+        {{#bs-nav type="pills"}}
+          {{#bs-nav-item}}
+            {{#link-to "index"}}Home{{/link-to}}
+          {{/bs-nav-item}}
+          {{#bs-nav-item}}
+            {{#link-to "devices"}}Devices{{/link-to}}
+          {{/bs-nav-item}}
+          {{#bs-nav-item}}
+            {{#link-to "account"}}Account{{/link-to}}
+          {{/bs-nav-item}}
+          {{#bs-nav-item}}
+              <a {{action 'invalidateSession'}}>Logout</a>
+          {{/bs-nav-item}}
+        {{/bs-nav}}
+      {{else}}
+        {{#bs-nav type="pills"}}
+          {{#bs-nav-item}}
+            {{#link-to "index"}}Home{{/link-to}}
+          {{/bs-nav-item}}
+          {{#bs-nav-item}}
+            {{#link-to "register"}}Register{{/link-to}}
+          {{/bs-nav-item}}
+          {{#bs-nav-item}}
+            {{#link-to "login"}}Login{{/link-to}}
+          {{/bs-nav-item}}
+        {{/bs-nav}}
+      {{/if}}
+    </div>
+    <div class="body">
+      {{outlet}}
+    </div>
+    <div class="spacer2"></div>
+</div>

@@ -1,0 +1,26 @@
+
+
+<div class="hompageBackground">
+	<div class="spacer"></div>
+	<div class="center-block" style="width:60% ">
+		<div class="text-center">
+		<h3>Login</h3>
+	</div>
+		<form {{action 'authenticate' on='submit'}}>
+			<div class="input-group input-group">
+			  	<span class="input-group-addon" for="identification" >Login</span>
+			  	{{input id='identification' class="form-control" placeholder='Enter Login' value=identification}}
+			</div>
+			<div class="input-group input-group">
+			  	<span class="input-group-addon" for="password" >Password</span>
+			 	{{input id='password' class="form-control "  placeholder='Enter Password' type='password' value=password}}
+			</div>	
+			<div>
+		  		<button class="btn btn-primary btn-block" type="submit">Login</button>
+		  	</div>
+		  {{#if errorMessage}}
+		    <p>{{errorMessage}}</p>
+		  {{/if}}
+		</form>
+	</div>
+</div>
