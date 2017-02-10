@@ -1,13 +1,12 @@
-import DS from 'ember-data';
-// import attr from 'ember-data/attr';
-// import { belongsTo, hasMany } from 'ember-data/relationships';
+import Model from 'ember-data/model';
+import attr from 'ember-data/attr';
+import { belongsTo } from 'ember-data/relationships';
 
-export default DS.Model.extend({
-
-  name: DS.attr(),
-  minVal: DS.attr(),
-  maxVal: DS.attr(),
-  eventEnable: DS.attr(),
-  lastValueRead: DS.attr(),
-  dev: DS.belongsTo('device')
+export default Model.extend({
+  name: attr(),
+  minVal: attr(),
+  maxVal: attr(),
+  eventEnable: attr(),
+  lastValueRead: attr(),
+  device: belongsTo('device'),
 });

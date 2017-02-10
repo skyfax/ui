@@ -3,30 +3,30 @@
     <div class="row alignright">
       {{#if session.isAuthenticated}}
         {{#bs-nav type="pills"}}
-          {{#bs-nav-item}}
+          {{#nav.item}}
             {{#link-to "index"}}Home{{/link-to}}
-          {{/bs-nav-item}}
-          {{#bs-nav-item}}
+          {{/nav.item}}
+          {{#nav.item}}
             {{#link-to "devices"}}Devices{{/link-to}}
-          {{/bs-nav-item}}
-          {{#bs-nav-item}}
+          {{/nav.item}}
+          {{#nav.item}}
             {{#link-to "account"}}Account{{/link-to}}
-          {{/bs-nav-item}}
-          {{#bs-nav-item}}
+          {{/nav.item}}
+          {{#nav.item}}
               <a {{action 'invalidateSession'}}>Logout</a>
-          {{/bs-nav-item}}
+          {{/nav.item}}
         {{/bs-nav}}
       {{else}}
-        {{#bs-nav type="pills"}}
-          {{#bs-nav-item}}
+        {{#bs-nav type="pills" as |nav|}}
+          {{#nav.item}}
             {{#link-to "index"}}Home{{/link-to}}
-          {{/bs-nav-item}}
-          {{#bs-nav-item}}
+          {{/nav.item}}
+          {{#nav.item}}
             {{#link-to "register"}}Register{{/link-to}}
-          {{/bs-nav-item}}
-          {{#bs-nav-item}}
+          {{/nav.item}}
+          {{#nav.item}}
             {{#link-to "login"}}Login{{/link-to}}
-          {{/bs-nav-item}}
+          {{/nav.item}}
         {{/bs-nav}}
       {{/if}}
     </div>
